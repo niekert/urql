@@ -35,9 +35,7 @@ export const createClient = (opts: ClientOptions): Client => {
   const fetchOptions =
     typeof opts.fetchOptions === 'function'
       ? opts.fetchOptions()
-      : opts.fetchOptions !== undefined
-      ? opts.fetchOptions
-      : {};
+      : opts.fetchOptions;
 
   /** Convert a query to an operation type */
   const createOperation = (

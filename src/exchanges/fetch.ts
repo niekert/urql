@@ -30,7 +30,10 @@ export const fetchExchange: Exchange = () => {
             ...fetchOptions,
           });
 
-          checkStatus(fetchOptions.redirect, response);
+          checkStatus(
+            fetchOptions !== undefined ? fetchOptions.redirect : undefined,
+            response
+          );
 
           result = await response.json();
 
